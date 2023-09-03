@@ -22,6 +22,7 @@ class CreateDepensesTable extends Migration
             $table->integer('solde_dep');
             $table->string('mode_dep');
             $table->string('status');
+            $table->unsignedBigInteger('id_ent')->nullable();
             $table->timestamps();
         });
     }

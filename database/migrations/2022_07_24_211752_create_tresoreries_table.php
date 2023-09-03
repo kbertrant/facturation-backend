@@ -19,10 +19,10 @@ class CreateTresoreriesTable extends Migration
             $table->integer('amount_tres');
             $table->dateTime('date_tres');
             $table->string('mouvement');
+            $table->unsignedBigInteger('id_ent')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_exe')->references('id')->on('year_exercices');
-            
+            $table->foreign('id_ent')->references('id')->on('entreprises');
         });
     }
 

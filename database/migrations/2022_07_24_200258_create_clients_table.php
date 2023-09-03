@@ -19,7 +19,10 @@ class CreateClientsTable extends Migration
             $table->string('phone_cli');
             $table->string('address_cli');
             $table->string('status');
+            $table->unsignedBigInteger('id_ent')->nullable();
             $table->timestamps();
+
+            $table->foreign('id_ent')->references('id')->on('entreprises');
         });
     }
 

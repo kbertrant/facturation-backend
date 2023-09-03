@@ -17,7 +17,11 @@ class CreateCatProduitsTable extends Migration
             $table->id();
             $table->string('cat_name');
             $table->string('cat_stat')->default('A');
+            $table->unsignedBigInteger('id_ent')->nullable();
             $table->timestamps();
+
+            $table->foreign('id_ent')->references('id')->on('entreprises');
+
         });
     }
 

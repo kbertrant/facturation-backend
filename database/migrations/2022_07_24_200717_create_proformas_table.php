@@ -16,7 +16,7 @@ class CreateProformasTable extends Migration
         Schema::create('proformas', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_cli');
-            $table->unsignedBigInteger('id_exe')->nullable();
+            $table->unsignedBigInteger('id_ent')->nullable();
             
             $table->datetime('date_pro');
             $table->string('pro_ref')->unique();
@@ -28,7 +28,7 @@ class CreateProformasTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_cli')->references('id')->on('clientes');
-            $table->foreign('id_exe')->references('id')->on('year_exercices');
+            $table->foreign('id_ent')->references('id')->on('entreprises');
 
         });
     }

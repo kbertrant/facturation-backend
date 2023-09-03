@@ -21,9 +21,12 @@ class CreateLivraisonsTable extends Migration
             $table->string('lf_stat')->default('A');
             $table->unsignedBigInteger('id_four');
             $table->unsignedBigInteger('id_prod');
+            $table->unsignedBigInteger('id_ent')->nullable();
             $table->timestamps();
             $table->foreign('id_four')->references('id')->on('fournisseurs');
             $table->foreign('id_prod')->references('id')->on('produits');
+            $table->foreign('id_ent')->references('id')->on('entreprises');
+            
         });
     }
 

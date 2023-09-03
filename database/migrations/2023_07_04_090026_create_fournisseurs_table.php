@@ -21,7 +21,10 @@ class CreateFournisseursTable extends Migration
             $table->string('four_phone')->nullable();
             $table->string('four_stat')->default('A');
             $table->string('resp_name')->nullable();
+            $table->unsignedBigInteger('id_ent')->nullable();
             $table->timestamps();
+
+            $table->foreign('id_ent')->references('id')->on('entreprises');
         });
     }
 

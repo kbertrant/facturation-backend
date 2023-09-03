@@ -20,8 +20,13 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('phone')->unique()->nullable();
+            $table->string('stat')->default('A');
+            $table->string('ville')->nullable();
+            $table->unsignedBigInteger('id_ent')->nullable();
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('id_ent')->references('id')->on('entreprises');
         });
     }
 

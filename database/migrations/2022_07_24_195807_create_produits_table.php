@@ -24,8 +24,11 @@ class CreateProduitsTable extends Migration
             $table->integer('size_prod')->nullable();
             $table->string('status');
             $table->unsignedBigInteger('id_cat')->nullable();
+            $table->unsignedBigInteger('id_ent')->nullable();
             $table->timestamps();
+
             $table->foreign('id_cat')->references('id')->on('cat_produits');
+            $table->foreign('id_ent')->references('id')->on('entreprises');
         });
     }
 

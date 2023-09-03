@@ -24,10 +24,11 @@ class CreatePaiementsTable extends Migration
             $table->integer('solde_pay');
             $table->string('mode_pay');
             $table->string('status');
+            $table->unsignedBigInteger('id_ent')->nullable();
             $table->timestamps();
 
             $table->foreign('id_cli')->references('id')->on('clientes');
-            $table->foreign('id_exe')->references('id')->on('year_exercices');
+            $table->foreign('id_ent')->references('id')->on('entreprises');
             $table->foreign('id_fac')->references('id')->on('factures');
             
         });

@@ -16,7 +16,7 @@ class CreateFacturesTable extends Migration
         Schema::create('factures', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_cli');
-            $table->unsignedBigInteger('id_exe')->nullable();
+            $table->unsignedBigInteger('id_ent')->nullable();
             $table->unsignedBigInteger('id_pro')->nullable();
             $table->datetime('date_fac');
             $table->string('ref_fac')->unique();
@@ -28,7 +28,7 @@ class CreateFacturesTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_cli')->references('id')->on('clientes');
-            $table->foreign('id_exe')->references('id')->on('year_exercices');
+            $table->foreign('id_ent')->references('id')->on('entreprises');
             $table->foreign('id_pro')->references('id')->on('proformas');
             
         });
