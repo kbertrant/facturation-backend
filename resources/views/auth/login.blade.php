@@ -72,23 +72,22 @@
             <h4 class="mb-2">Bienvenue ! 👋</h4>
             <p class="mb-4">Connectez-vous pour acceder à votre commerce</p>
 
-            <form id="formAuthentication" class="mb-4" method="POST" action="{{ route('login') }}">
+            <form class="mb-4" method="POST" action="{{ route('login') }}">
                 @csrf
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input
-                  type="text"
+                  type="email"
                   class="form-control"
                   id="email"
                   name="email"
-                  placeholder="Enter your email or username"
-                  autofocus
+                  autocomplete="off"
                 />
               </div>
               <div class="mb-3 form-password-toggle">
                 <div class="d-flex justify-content-between">
                   <label class="form-label" for="password">Mot de passe</label>
-                  <a href="auth-forgot-password-basic.html">
+                  <a href="{{ route('password.request') }}">
                     <small>Mot de passe oublié ?</small>
                   </a>
                 </div>
@@ -98,8 +97,7 @@
                     id="password"
                     class="form-control"
                     name="password"
-                    placeholder="Mot de passe ici..."
-                    aria-describedby="password"
+                    placeholder="Mot de passe ici"
                   />
                   <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                 </div>
@@ -117,7 +115,7 @@
 
             <p class="text-center">
               <span>Nouveau?</span>
-              <a href="auth-register-basic.html">
+              <a href="{{ route('register') }}">
                 <span>Créer votre compte</span>
               </a>
             </p>

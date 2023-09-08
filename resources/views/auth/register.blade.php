@@ -103,7 +103,35 @@
                   <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                 </div>
               </div>
-
+              <div class="mb-3 form-password-toggle">
+                <label class="form-label" for="password">Confirmer mot de passe</label>
+                <div class="input-group input-group-merge">
+                  <input
+                    type="password"
+                    id="confirm_password"
+                    class="form-control"
+                    name="password_confirmation"
+                    placeholder="Confirmer mot de passe"
+                  />
+                  <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Telephone</label>
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Entrer votre numero" />
+              </div>
+              <div class="mb-3">
+                <label for="ville" class="form-label">Ville</label>
+                <input type="text" class="form-control" id="ville" name="ville" placeholder="Entrer votre ville" />
+              </div>
+              <div class="mb-3">
+                <label for="entreprise" class="form-label">Le nom de votre entrreprise</label>
+                <input type="text" class="form-control" id="entreprise" name="entreprise" placeholder="Entrer votre entreprise" />
+              </div>
+              <div class="mb-3">
+                <label for="rc_ent" class="form-label">Registre commerce entrreprise</label>
+                <input type="text" class="form-control" id="rc_ent" name="rc_ent" placeholder="Entrer votre registre de commerce" />
+              </div>
               <div class="mb-3">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
@@ -113,12 +141,12 @@
                   </label>
                 </div>
               </div>
-              <button class="btn btn-primary d-grid w-100">Inscription </button>
+              <button type="submit" class="btn btn-primary d-grid w-100">Inscription </button>
             </form>
 
             <p class="text-center">
               <span>Déjâ inscrit ?</span>
-              <a href="auth-login-basic.html">
+              <a href="{{ route('login') }}">
                 <span>Connectez-vous</span>
               </a>
             </p>
