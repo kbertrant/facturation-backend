@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', ' - Login')
 @section('content')
 <div class="container-xxl">
     <div class="authentication-wrapper authentication-basic container-p-y">
@@ -124,5 +124,5 @@
         <!-- /Register -->
       </div>
     </div>
-  </div>
+</div>
 @endsection
